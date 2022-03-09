@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/SSCMiniGame/Assets/Images/Paper/Table.png" type="Texture" id=1]
+
+
+[node name="Table" type="Node2D"]
+
+[node name="TableImage" type="Sprite" parent="."]
+texture = ExtResource( 1 )

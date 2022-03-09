@@ -1,0 +1,222 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://games/GoetheCardMiniGame/Assets/Fonts/ButtonFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://games/GoetheCardMiniGame/Assets/Images/woodenBackground.png" type="Texture" id=2]
+[ext_resource path="res://games/GoetheCardMiniGame/Assets/Images/glaukom.png" type="Texture" id=3]
+[ext_resource path="res://games/GoetheCardMiniGame/Assets/Scripts/Main.gd" type="Script" id=4]
+[ext_resource path="res://games/GoetheCardMiniGame/Assets/Fonts/anzeigenFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://games/Images/TutorialGoetheCard.png" type="Texture" id=6]
+[ext_resource path="res://games/GoetheCardMiniGame/Assets/Scenes/StartButtonCard.tscn" type="PackedScene" id=7]
+[ext_resource path="res://audios/GamesTheme.ogg" type="AudioStream" id=8]
+[ext_resource path="res://audios/SharedSounds/buttonClick.ogg" type="AudioStream" id=9]
+[ext_resource path="res://audios/GoetheCard/cardValidated.ogg" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://games/GoetheCardMiniGame/Assets/Fonts/CALIBRIB.TTF"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://games/GoetheCardMiniGame/Assets/Fonts/CALIBRIB.TTF"
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 9
+extra_spacing_space = 5
+font_data = SubResource( 3 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TutorialSprite" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+z_index = 3
+texture = ExtResource( 6 )
+
+[node name="StartButton" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1190, 460 )
+z_index = 3
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+
+[node name="Glaucom" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+z_index = 2
+texture = ExtResource( 3 )
+
+[node name="ButtonRotLeft" type="Button" parent="."]
+margin_left = 894.0
+margin_top = 283.373
+margin_right = 1040.0
+margin_bottom = 311.373
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Nach links drehen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonRotRight" type="Button" parent="."]
+margin_left = 1060.0
+margin_top = 283.373
+margin_right = 1206.0
+margin_bottom = 311.373
+custom_fonts/font = ExtResource( 1 )
+text = "Nach rechts drehen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonFlip" type="Button" parent="."]
+margin_left = 894.0
+margin_top = 322.373
+margin_right = 1040.0
+margin_bottom = 350.373
+custom_fonts/font = ExtResource( 1 )
+text = "Karte umdrehen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonValidate" type="Button" parent="."]
+margin_left = 1060.0
+margin_top = 322.373
+margin_right = 1206.0
+margin_bottom = 350.373
+custom_fonts/font = ExtResource( 1 )
+text = "Validieren"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 152.251
+margin_top = 415.986
+margin_right = 431.251
+margin_bottom = 542.986
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LolasSicht" type="Label" parent="ColorRect"]
+margin_left = 7.0
+margin_top = 6.0
+margin_right = 283.0
+margin_bottom = 123.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Übrigens, das ist Lolas Sicht in ihrem Glaukomstadium.
+Sie muss leider ohne zusätzliche Hilfe erkennen ob die Karten richtig validiert wurden."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CVLabel" type="Label" parent="."]
+margin_left = 900.0
+margin_top = 215.482
+margin_right = 1036.0
+margin_bottom = 235.482
+custom_fonts/font = ExtResource( 5 )
+text = "Karten validiert:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CVPoint" type="Label" parent="."]
+margin_left = 1000.0
+margin_top = 216.373
+margin_right = 1136.0
+margin_bottom = 236.373
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CNVLabel" type="Label" parent="."]
+margin_left = 900.0
+margin_top = 241.373
+margin_right = 1083.0
+margin_bottom = 261.373
+custom_fonts/font = ExtResource( 5 )
+text = "Karten nicht validiert:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CNVPoint" type="Label" parent="."]
+margin_left = 1033.0
+margin_top = 241.373
+margin_right = 1135.0
+margin_bottom = 261.373
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerNewGame" type="Timer" parent="."]
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+margin_left = 475.0
+margin_top = 360.0
+margin_right = 805.0
+margin_bottom = 408.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+visible = false
+light_mask = 32
+margin_left = 105.704
+margin_top = 454.78
+margin_right = 193.704
+margin_bottom = 474.78
+text = "Game Done"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -30.0
+autoplay = true
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -10.0
+
+[node name="CardValidatedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
+
+[connection signal="pressed" from="ButtonRotLeft" to="." method="_on_ButtonRotLeft_pressed"]
+[connection signal="pressed" from="ButtonRotRight" to="." method="_on_ButtonRotRight_pressed"]
+[connection signal="pressed" from="ButtonFlip" to="." method="_on_ButtonFlip_pressed"]
+[connection signal="pressed" from="ButtonValidate" to="." method="_on_ButtonValidate_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerNewGame" to="." method="_on_TimerNewGame_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

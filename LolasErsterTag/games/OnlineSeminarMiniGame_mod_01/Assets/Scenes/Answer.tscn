@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://games/OnlineSeminarMiniGame_mod_01/Assets/Scenes/Answer_temp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://games/OnlineSeminarMiniGame_mod_01/Assets/Scenes/Dropzone.tscn" type="PackedScene" id=2]
+
+[node name="Answer" type="Node2D"]
+
+[node name="Dropzone" parent="." instance=ExtResource( 2 )]
+position = Vector2( 690, 283 )
+
+[node name="Dropzone2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 269, 210 )
+
+[node name="Answer_temp" parent="." instance=ExtResource( 1 )]

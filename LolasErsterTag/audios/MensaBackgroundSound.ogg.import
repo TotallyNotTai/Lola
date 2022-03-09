@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MensaBackgroundSound.ogg-c08c9d0ff4b2b35a324fc786c32b0855.oggstr"
+
+[deps]
+
+source_file="res://audios/MensaBackgroundSound.ogg"
+dest_files=[ "res://.import/MensaBackgroundSound.ogg-c08c9d0ff4b2b35a324fc786c32b0855.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

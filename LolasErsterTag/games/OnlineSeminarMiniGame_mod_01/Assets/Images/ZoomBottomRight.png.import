@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ZoomBottomRight.png-960e9e4a140780e1a61a5b1edf4d17ae.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://games/OnlineSeminarMiniGame_mod_01/Assets/Images/ZoomBottomRight.png"
+dest_files=[ "res://.import/ZoomBottomRight.png-960e9e4a140780e1a61a5b1edf4d17ae.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

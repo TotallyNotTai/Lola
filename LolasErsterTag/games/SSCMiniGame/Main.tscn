@@ -1,0 +1,233 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://games/SSCMiniGame/Assets/Images/backgroundSSC.png" type="Texture" id=1]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://games/SSCMiniGame/Assets/Fonts/toolTextFonts.tres" type="DynamicFont" id=3]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scenes/MouseFollower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scenes/Tools/TaggingTool.tscn" type="PackedScene" id=5]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scenes/Tools/EditTool.tscn" type="PackedScene" id=6]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scenes/Tools/LangTool.tscn" type="PackedScene" id=7]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scenes/Tools/ImgConverterTool.tscn" type="PackedScene" id=8]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scenes/Tools/TitleChangeTool.tscn" type="PackedScene" id=9]
+[ext_resource path="res://games/SSCMiniGame/Assets/Fonts/gameovertitle.tres" type="DynamicFont" id=10]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scenes/TutorialButtonSSC.tscn" type="PackedScene" id=11]
+[ext_resource path="res://games/Images/TutorialSSC.png" type="Texture" id=12]
+[ext_resource path="res://games/Font/GameStartFont.tres" type="DynamicFontData" id=13]
+[ext_resource path="res://games/SSCMiniGame/Assets/Fonts/infoTextFonts.tres" type="DynamicFont" id=14]
+[ext_resource path="res://audios/GamesTheme.ogg" type="AudioStream" id=15]
+[ext_resource path="res://games/SSCMiniGame/Assets/Scenes/StartButtonSSC.tscn" type="PackedScene" id=16]
+[ext_resource path="res://audios/SharedSounds/buttonClick.ogg" type="AudioStream" id=17]
+[ext_resource path="res://audios/SharedSounds/gameover.ogg" type="AudioStream" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+extra_spacing_char = 5
+extra_spacing_space = 5
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.109804, 0.298039, 0.517647, 1 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 237.165 ]
+}
+
+[node name="StartButton" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1190, 460 )
+z_index = 3
+
+[node name="TutorialButton" parent="." instance=ExtResource( 11 )]
+visible = false
+light_mask = 16
+position = Vector2( 1240, 35 )
+z_index = 3
+z_as_relative = false
+
+[node name="TutorialSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 640, 360 )
+z_index = 2
+texture = ExtResource( 12 )
+
+[node name="GameStartButton" type="Button" parent="TutorialSprite"]
+visible = false
+margin_left = -120.0
+margin_top = 300.0
+margin_right = 123.0
+margin_bottom = 338.0
+custom_fonts/font = SubResource( 1 )
+text = "Spiel starten"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 9.0
+margin_top = 111.0
+margin_right = 386.0
+margin_bottom = 525.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 10.0
+margin_top = 18.0
+margin_right = 366.0
+margin_bottom = 397.0
+custom_fonts/font = ExtResource( 3 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
+autostart = true
+
+[node name="TimeLeft" type="Label" parent="."]
+margin_left = 951.269
+margin_top = 88.9685
+margin_right = 1035.27
+margin_bottom = 109.969
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 14 )
+text = "Zeit übrig"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalPapersLabel" type="Label" parent="."]
+margin_left = 950.92
+margin_top = 120.676
+margin_right = 1156.92
+margin_bottom = 141.676
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 14 )
+text = "Dokumente verarbeitet: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalPapers" type="Label" parent="."]
+margin_left = 1176.49
+margin_top = 120.762
+margin_right = 1234.49
+margin_bottom = 144.762
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 14 )
+text = "0"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeCounter" type="Label" parent="."]
+margin_left = 1179.51
+margin_top = 87.3811
+margin_right = 1233.51
+margin_bottom = 115.783
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 14 )
+text = "0"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MouseFollower" parent="." instance=ExtResource( 4 )]
+position = Vector2( -152, -136 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="EditTool" parent="." instance=ExtResource( 6 )]
+light_mask = 2
+position = Vector2( 47.261, 60 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="TaggingTool" parent="." instance=ExtResource( 5 )]
+position = Vector2( 123.123, 60 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="LangTool" parent="." instance=ExtResource( 7 )]
+position = Vector2( 197.983, 60 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="ImgConverterTool" parent="." instance=ExtResource( 8 )]
+position = Vector2( 272.109, 60 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="TitleChangeTool" parent="." instance=ExtResource( 9 )]
+position = Vector2( 347.543, 60 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="CheckDocument" type="Button" parent="."]
+margin_left = 11.0
+margin_top = 535.0
+margin_right = 386.0
+margin_bottom = 610.0
+custom_fonts/font = ExtResource( 14 )
+text = "Dokument auf Barrierefreiheit prüfen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverScreen" type="Label" parent="."]
+visible = false
+light_mask = -2147483632
+margin_left = 937.5
+margin_top = 578.272
+margin_right = 1264.5
+margin_bottom = 661.272
+custom_fonts/font = ExtResource( 10 )
+text = "ALLE DOKUMENTE 
+BEARBEITET !!!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 7.8407
+margin_top = 693.318
+margin_right = 95.8407
+margin_bottom = 713.318
+text = "Game Done"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerAfterFinish" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -30.0
+autoplay = true
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -10.0
+
+[connection signal="pressed" from="TutorialSprite/GameStartButton" to="." method="_on_GameStartButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="mouse_entered" from="CheckDocument" to="." method="_on_CheckDocument_mouse_entered"]
+[connection signal="mouse_exited" from="CheckDocument" to="." method="_on_CheckDocument_mouse_exited"]
+[connection signal="pressed" from="CheckDocument" to="." method="_on_CheckDocument_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="TimerAfterFinish" to="." method="_on_TimerAfterFinish_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

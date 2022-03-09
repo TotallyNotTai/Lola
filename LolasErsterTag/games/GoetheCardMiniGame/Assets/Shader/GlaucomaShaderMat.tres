@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://games/GoetheCardMiniGame/Assets/Shader/Glaucoma.shader" type="Shader" id=1]
+
+[sub_resource type="NoiseTexture" id=1]
+seamless = true
+
+[resource]
+render_priority = 3
+shader = ExtResource( 1 )
+shader_param/value = 0.242
+shader_param/noise_texture = SubResource( 1 )

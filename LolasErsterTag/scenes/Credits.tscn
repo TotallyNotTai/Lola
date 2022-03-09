@@ -1,0 +1,271 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/scripts/Credits.gd" type="Script" id=1]
+[ext_resource path="res://logos/sd-logo.png" type="Texture" id=2]
+[ext_resource path="res://games/Font/endscreenButton.tres" type="DynamicFont" id=3]
+[ext_resource path="res://logos/digll.png" type="Texture" id=4]
+[ext_resource path="res://audios/Theme.ogg" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.380392, 0.560784, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://games/GoetheCardMiniGame/Assets/Fonts/CALIBRIB.TTF"
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.894118, 0.890196, 0.866667, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.894118, 0.890196, 0.866667, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.894118, 0.890196, 0.866667, 1 )
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="Panel"]
+margin_top = 43.0
+margin_right = 1280.0
+margin_bottom = 616.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sdlogo" type="Sprite" parent="Panel"]
+position = Vector2( 245.74, 245.598 )
+scale = Vector2( 0.972342, 0.972342 )
+texture = ExtResource( 2 )
+
+[node name="digll" type="Sprite" parent="Panel"]
+visible = false
+position = Vector2( 375.216, 157.128 )
+scale = Vector2( 0.140943, 0.140943 )
+texture = ExtResource( 4 )
+
+[node name="Entwicklung" type="Label" parent="Panel"]
+anchor_left = -0.000620079
+anchor_right = -0.000620079
+margin_left = 370.794
+margin_top = 60.0
+margin_right = 851.794
+margin_bottom = 125.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Entwicklung und Konzeption:
+"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entwicklung2" type="Label" parent="Panel"]
+anchor_left = -0.000620079
+anchor_right = -0.000620079
+margin_left = 870.794
+margin_top = 60.0
+margin_right = 1181.79
+margin_bottom = 363.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Linda Rustemeier
+Saba Mateen
+Lino Weist
+Imran Hossain
+Sanja Grimminger
+Dr. Sarah Voß-Nakkour
+Lilli Isabel Fößler"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copyrights" type="Label" parent="Panel"]
+anchor_left = -0.000620079
+anchor_right = -0.000620079
+margin_left = 370.794
+margin_top = 330.0
+margin_right = 845.794
+margin_bottom = 401.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Bildnachweis:"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copyrights2" type="Label" parent="Panel"]
+anchor_left = -0.000620079
+anchor_right = -0.000620079
+margin_left = 870.794
+margin_top = 330.0
+margin_right = 1181.79
+margin_bottom = 401.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Uwe Dettmer"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copyrights3" type="Label" parent="Panel"]
+anchor_left = -0.000620079
+anchor_right = -0.000620079
+margin_left = 370.794
+margin_top = 380.0
+margin_right = 845.794
+margin_bottom = 451.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Videonachweis:"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copyrights4" type="Label" parent="Panel"]
+anchor_left = -0.000620079
+anchor_right = -0.000620079
+margin_left = 870.794
+margin_top = 380.0
+margin_right = 1181.79
+margin_bottom = 479.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "HRZ Medientechnik 
+(Szymon Zych)"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copyrights5" type="Label" parent="Panel"]
+anchor_left = -0.000620079
+anchor_right = -0.000620079
+margin_left = 370.794
+margin_top = 450.0
+margin_right = 845.794
+margin_bottom = 521.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Audionachweis:"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copyrights6" type="Label" parent="Panel"]
+anchor_left = -0.000620079
+anchor_right = -0.000620079
+margin_left = 870.794
+margin_top = 450.0
+margin_right = 1269.79
+margin_bottom = 549.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "- Noodles by Another Kid
+- Summertime by Tokyo Music Walker
+[Audio Library Youtube]
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 535.0
+margin_top = 640.0
+margin_right = 771.0
+margin_bottom = 684.0
+custom_colors/font_color = Color( 0, 0.380392, 0.560784, 1 )
+custom_colors/font_color_hover = Color( 0, 0.380392, 0.560784, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Zurück"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Kontakt" type="Button" parent="Panel"]
+margin_left = 845.0
+margin_top = 640.0
+margin_right = 1229.0
+margin_bottom = 684.0
+custom_colors/font_color = Color( 0, 0.380392, 0.560784, 1 )
+custom_colors/font_color_hover = Color( 0, 0.380392, 0.560784, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Mailkontakt zu studiumdigitale"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inklusion" type="Button" parent="Panel"]
+margin_left = 48.514
+margin_top = 640.0
+margin_right = 487.514
+margin_bottom = 684.0
+custom_colors/font_color = Color( 0, 0.380392, 0.560784, 1 )
+custom_colors/font_color_hover = Color( 0, 0.380392, 0.560784, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = " Weitere Information zur Inklusion "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -30.0
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/Kontakt" to="." method="_on_Kontakt_pressed"]
+[connection signal="pressed" from="Panel/Inklusion" to="." method="_on_Inklusion_pressed"]

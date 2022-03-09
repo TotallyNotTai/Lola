@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://games/MensaMiniGame/Assets/Scenes/Screen.tres" type="DynamicFont" id=1]
+[ext_resource path="res://games/MensaMiniGame/Assets/Images/Screen/ScreenWideFront.png" type="Texture" id=2]
+[ext_resource path="res://games/MensaMiniGame/Assets/Images/Screen/ScreenWideBack.png" type="Texture" id=3]
+[ext_resource path="res://games/MensaMiniGame/Assets/Scripts/Screen.gd" type="Script" id=4]
+[ext_resource path="res://games/MensaMiniGame/Assets/Images/Screen/checkmark.png" type="Texture" id=5]
+[ext_resource path="res://games/MensaMiniGame/Assets/Font/Screen.tres" type="DynamicFont" id=7]
+
+[node name="Screen" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="ScreenBack" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="ScreenTextItemName" type="Label" parent="."]
+margin_left = -184.0
+margin_top = -76.0
+margin_right = 184.0
+margin_bottom = -30.0
+rect_min_size = Vector2( 110, 25 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Camembert (gebacken)"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenTextAllergies" type="Label" parent="."]
+margin_left = -178.636
+margin_top = -12.7525
+margin_right = 181.364
+margin_bottom = 77.2475
+rect_min_size = Vector2( 360, 90 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Allergene:"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerShow" type="Label" parent="."]
+visible = false
+margin_left = 147.117
+margin_top = 40.7627
+margin_right = 187.117
+margin_bottom = 80.7627
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenFront" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="checkmark" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

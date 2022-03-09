@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/OnlineSeminarMiniGame_mod_01/Assets/Scripts/Dropzone.gd" type="Script" id=1]
+
+[node name="Dropzone" type="Position2D" groups=["zone"]]
+script = ExtResource( 1 )

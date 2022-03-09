@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/heartGone.ogg-6f7dee5062ca4eb2d36125b8c5d1d64b.oggstr"
+
+[deps]
+
+source_file="res://audios/Mensa/heartGone.ogg"
+dest_files=[ "res://.import/heartGone.ogg-6f7dee5062ca4eb2d36125b8c5d1d64b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

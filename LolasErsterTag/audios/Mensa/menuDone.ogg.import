@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/menuDone.ogg-1654d7a66cdcc059690c9bf84d33b2bf.oggstr"
+
+[deps]
+
+source_file="res://audios/Mensa/menuDone.ogg"
+dest_files=[ "res://.import/menuDone.ogg-1654d7a66cdcc059690c9bf84d33b2bf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

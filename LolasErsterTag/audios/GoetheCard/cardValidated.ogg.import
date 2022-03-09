@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cardValidated.ogg-6a9552450ad7bd3cc8302dd38bca7e37.oggstr"
+
+[deps]
+
+source_file="res://audios/GoetheCard/cardValidated.ogg"
+dest_files=[ "res://.import/cardValidated.ogg-6a9552450ad7bd3cc8302dd38bca7e37.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

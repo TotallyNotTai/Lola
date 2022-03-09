@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://games/MensaMiniGame/Assets/Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://games/MensaMiniGame/Assets/Scenes/Screen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://games/MensaMiniGame/Assets/Images/Screen/ConditionPanel.png" type="Texture" id=3]
+[ext_resource path="res://games/MensaMiniGame/Assets/Font/Misc.tres" type="DynamicFont" id=4]
+[ext_resource path="res://games/MensaMiniGame/Assets/Images/UI/heartFull.png" type="Texture" id=5]
+[ext_resource path="res://games/MensaMiniGame/Assets/Images/UI/heartEmpty.png" type="Texture" id=6]
+[ext_resource path="res://games/MensaMiniGame/Assets/Font/AllergieAnzeige.tres" type="DynamicFont" id=7]
+[ext_resource path="res://audios/Mensa/menuDone.ogg" type="AudioStream" id=8]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Screen" parent="." instance=ExtResource( 2 )]
+position = Vector2( 500, 176 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="ConditionPanel" type="Sprite" parent="."]
+position = Vector2( 921.601, 107.564 )
+scale = Vector2( 2.12, 1.76 )
+texture = ExtResource( 3 )
+
+[node name="TimeLeftPanel" type="Sprite" parent="."]
+position = Vector2( 101.748, 269.825 )
+scale = Vector2( 1.43047, 1.18756 )
+texture = ExtResource( 3 )
+
+[node name="AllergieLabel" type="Label" parent="."]
+margin_left = 826.492
+margin_top = 29.3273
+margin_right = 1016.49
+margin_bottom = 181.327
+rect_min_size = Vector2( 190, 150 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sie haben folgende Allergie(n):
+
+"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLeftLabel" type="Label" parent="."]
+margin_left = 7.46097
+margin_top = 218.529
+margin_right = 197.461
+margin_bottom = 370.528
+rect_min_size = Vector2( 190, 150 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Zeit übrig
+
+
+"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="heartEmpty" type="Sprite" parent="."]
+position = Vector2( 1200, 656 )
+texture = ExtResource( 6 )
+
+[node name="heartEmpty2" type="Sprite" parent="."]
+position = Vector2( 1096, 656 )
+texture = ExtResource( 6 )
+
+[node name="heartEmpty3" type="Sprite" parent="."]
+position = Vector2( 992, 656 )
+texture = ExtResource( 6 )
+
+[node name="heartFull" type="Sprite" parent="."]
+position = Vector2( 1200, 656 )
+texture = ExtResource( 5 )
+
+[node name="heartFull2" type="Sprite" parent="."]
+position = Vector2( 1096, 656 )
+texture = ExtResource( 5 )
+
+[node name="heartFull3" type="Sprite" parent="."]
+position = Vector2( 992, 656 )
+texture = ExtResource( 5 )
+
+[node name="PointsLabel" type="Label" parent="."]
+margin_left = 952.0
+margin_top = 576.0
+margin_right = 1097.0
+margin_bottom = 615.0
+custom_fonts/font = ExtResource( 4 )
+text = "Punkte:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PointsLabelText" type="Label" parent="."]
+margin_left = 1096.0
+margin_top = 576.0
+margin_right = 1232.0
+margin_bottom = 615.0
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 180.0
+autostart = true
+
+[node name="MenuDoneSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_GameOverTimer_timeout"]

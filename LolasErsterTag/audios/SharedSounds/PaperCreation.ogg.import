@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PaperCreation.ogg-adf9729c2df24d85f91e53d83f7e666e.oggstr"
+
+[deps]
+
+source_file="res://audios/SharedSounds/PaperCreation.ogg"
+dest_files=[ "res://.import/PaperCreation.ogg-adf9729c2df24d85f91e53d83f7e666e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

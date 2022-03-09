@@ -1,0 +1,300 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/buttonBuy.png" type="Texture" id=1]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/Background.png" type="Texture" id=2]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/buttonSell.png" type="Texture" id=3]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Scenes/Field.tscn" type="PackedScene" id=4]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Fonts/Railway32.tres" type="DynamicFont" id=5]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Scenes/TutorialButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/RU.png" type="Texture" id=7]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/GD.png" type="Texture" id=8]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/RD.png" type="Texture" id=9]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/GU.png" type="Texture" id=10]
+[ext_resource path="res://games/VorlesungMiniGame/Main.gd" type="Script" id=11]
+[ext_resource path="res://games/Images/TutorialVorlesung.png" type="Texture" id=12]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/coinGold.png" type="Texture" id=13]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Images/coinKontur.png" type="Texture" id=14]
+[ext_resource path="res://games/VorlesungMiniGame/Assets/Scenes/StartButtonVorlesung.tscn" type="PackedScene" id=15]
+[ext_resource path="res://audios/GamesTheme.ogg" type="AudioStream" id=16]
+[ext_resource path="res://audios/Vorlesung/CoinGone.ogg" type="AudioStream" id=17]
+[ext_resource path="res://audios/SharedSounds/buttonClick.ogg" type="AudioStream" id=18]
+[ext_resource path="res://audios/SharedSounds/gameover.ogg" type="AudioStream" id=19]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 11 )
+__meta__ = {
+"_editor_description_": "Main Node"
+}
+timerWaitTime = 5
+
+[node name="StartButton" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1190, 460 )
+z_index = 2
+
+[node name="TutorialButton" parent="." instance=ExtResource( 6 )]
+visible = false
+light_mask = 2
+position = Vector2( 1240, 35 )
+z_index = 2
+z_as_relative = false
+
+[node name="TutorialSprite" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 640, 360 )
+z_index = 1
+texture = ExtResource( 12 )
+
+[node name="GameStartButton" type="Button" parent="TutorialSprite"]
+visible = false
+margin_left = -120.0
+margin_top = 300.0
+margin_right = 123.0
+margin_bottom = 338.0
+custom_fonts/font = ExtResource( 5 )
+text = "Spiel starten"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+light_mask = -2147483647
+position = Vector2( 640, 360 )
+scale = Vector2( 1.03727, 1.16608 )
+texture = ExtResource( 2 )
+
+[node name="ButtonBuy" type="Button" parent="."]
+light_mask = 2
+margin_left = 637.614
+margin_top = 537.132
+margin_right = 772.614
+margin_bottom = 593.132
+icon = ExtResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSell" type="Button" parent="."]
+light_mask = 2
+margin_left = 497.0
+margin_top = 538.0
+margin_right = 632.0
+margin_bottom = 595.0
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Field" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 320 )
+
+[node name="BUY1" type="ColorRect" parent="."]
+margin_left = 646.871
+margin_top = 594.0
+margin_right = 731.871
+margin_bottom = 662.0
+mouse_filter = 2
+color = Color( 0.894118, 0.890196, 0.866667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GU" type="Sprite" parent="BUY1"]
+light_mask = -2147483644
+position = Vector2( 42, 30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+
+[node name="BUY2" type="ColorRect" parent="."]
+margin_left = 732.179
+margin_top = 594.0
+margin_right = 817.179
+margin_bottom = 662.0
+mouse_filter = 2
+color = Color( 0.894118, 0.890196, 0.866667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RD" type="Sprite" parent="BUY2"]
+position = Vector2( 42.9796, 34.3442 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="BUY3" type="ColorRect" parent="."]
+margin_left = 461.828
+margin_top = 594.0
+margin_right = 546.828
+margin_bottom = 662.0
+mouse_filter = 2
+color = Color( 0.894118, 0.890196, 0.866667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GD" type="Sprite" parent="BUY3"]
+position = Vector2( 43.1217, 38.3834 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="BUY4" type="ColorRect" parent="."]
+margin_left = 545.573
+margin_top = 594.0
+margin_right = 630.573
+margin_bottom = 662.0
+mouse_filter = 2
+color = Color( 0.894118, 0.890196, 0.866667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RU" type="Sprite" parent="BUY4"]
+position = Vector2( 43.1218, 37.4925 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="PointsLabel" type="Label" parent="."]
+margin_left = 485.812
+margin_top = 61.5804
+margin_right = 649.812
+margin_bottom = 100.58
+custom_fonts/font = ExtResource( 5 )
+text = "Punkte"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pointstext" type="Label" parent="."]
+margin_left = 627.999
+margin_top = 67.9845
+margin_right = 791.999
+margin_bottom = 106.984
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorblindLabel" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 109.0
+margin_right = 464.0
+margin_bottom = 420.0
+custom_fonts/font = ExtResource( 5 )
+text = "Leo versucht die gleichen Aufgabe zu lösen. 
+
+Durch die Rot-Grün-Sehschwäche gestaltet es sich etwas anders..."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+margin_left = 587.054
+margin_top = 9.18723
+margin_right = 702.054
+margin_bottom = 48.1872
+custom_fonts/font = ExtResource( 5 )
+text = "TIMER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerText" type="Label" parent="."]
+visible = false
+margin_left = 603.2
+margin_top = 52.7002
+margin_right = 684.2
+margin_bottom = 96.7002
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 7.0
+margin_top = 695.0
+margin_right = 99.0
+margin_bottom = 715.0
+text = "GAME DONE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coinGold" type="Sprite" parent="."]
+position = Vector2( 840, 160 )
+texture = ExtResource( 13 )
+
+[node name="coinGold2" type="Sprite" parent="."]
+position = Vector2( 840, 240 )
+texture = ExtResource( 13 )
+
+[node name="coinGold3" type="Sprite" parent="."]
+position = Vector2( 840, 320 )
+texture = ExtResource( 13 )
+
+[node name="coinGold4" type="Sprite" parent="."]
+position = Vector2( 840, 400 )
+texture = ExtResource( 13 )
+
+[node name="coinGold5" type="Sprite" parent="."]
+position = Vector2( 840, 480 )
+texture = ExtResource( 13 )
+
+[node name="coinKontur" type="Sprite" parent="."]
+position = Vector2( 840, 160 )
+texture = ExtResource( 14 )
+
+[node name="coinKontur2" type="Sprite" parent="."]
+position = Vector2( 840, 240 )
+texture = ExtResource( 14 )
+
+[node name="coinKontur3" type="Sprite" parent="."]
+position = Vector2( 840, 320 )
+texture = ExtResource( 14 )
+
+[node name="coinKontur4" type="Sprite" parent="."]
+position = Vector2( 840, 400 )
+texture = ExtResource( 14 )
+
+[node name="coinKontur5" type="Sprite" parent="."]
+position = Vector2( 840, 480 )
+texture = ExtResource( 14 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -30.0
+autoplay = true
+
+[node name="CoinGoneSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -20.0
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[connection signal="pressed" from="TutorialSprite/GameStartButton" to="." method="_on_GameStartButton_pressed"]
+[connection signal="mouse_entered" from="ButtonBuy" to="." method="_on_ButtonBuy_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonBuy" to="." method="_on_ButtonBuy_mouse_exited"]
+[connection signal="pressed" from="ButtonBuy" to="." method="_on_ButtonBuy_pressed"]
+[connection signal="mouse_entered" from="ButtonSell" to="." method="_on_ButtonSell_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonSell" to="." method="_on_ButtonSell_mouse_exited"]
+[connection signal="pressed" from="ButtonSell" to="." method="_on_ButtonSell_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="finished" from="CoinGoneSound" to="." method="_on_CoinGoneSound_finished"]
